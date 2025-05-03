@@ -12,8 +12,8 @@ def predict_fraud(input_text):
     try:
         input_json = json.loads(input_text)
         features = input_json.get("features", [])
-        if len(features) != 30:
-            return f"Error: Expected 30 features, got {len(features)}"
+        if len(features) != 29:
+            return f"Error: Expected 29 features, got {len(features)}"
         features_array = np.array([features])
         features_scaled = scaler.transform(features_array)
         prediction = model.predict(features_scaled)[0]
